@@ -1,0 +1,7 @@
+<div class="panel panel-default">
+	<ul class="list-group">
+		{% for entity in entities %}
+		    <li class="list-group-item"><a href="{{ path("front.project.show", { "id": entity.id, "slug": entity.slug }) }}">{{ entity.title }}</a></li> 
+		{% endfor %}
+	</ul>
+</div>

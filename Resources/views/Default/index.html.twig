@@ -1,0 +1,22 @@
+{% extends 'RofilRepoContentBundle:Theme:one-column.html.twig' %}
+
+{% block content -%}
+
+	<div class="row">
+		{% for entity in entities %}
+		    <div class="col-md-3">
+		    	<div class="panel panel-default"><img src="{{ image(entity.webImagePath).forceResize(400,275) }}" alt="{{ entity.title }}" class="img-responsive">
+		    		<ul class="list-group">
+		    			{# <li class="list-group-item"></li> #}
+		    			<li class="list-group-item"><a href="{{ path("front.project.show", { "id":entity.id, "slug": entity.slug }) }}">{{ entity.title }}</a> </li>
+		    			<li class="list-group-item">
+		    				<span class="glyphicon glyphicon-calendar"></span> {{ entity.createdAt|date("d/m/Y") }}
+		    			</li>
+		    		</ul>
+		    	</div>
+		    	
+		    	
+		    </div>
+		{% endfor %}
+	</div>
+{% endblock %}

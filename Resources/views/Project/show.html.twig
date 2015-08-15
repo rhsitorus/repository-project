@@ -1,0 +1,82 @@
+{% extends 'RofilRepoContentBundle:Theme:one-column.html.twig' %}
+
+{% block content -%}
+    <h2>Project</h2>
+    <hr>
+                <div class="row">
+    <div class="col-md-6">
+        <a href="{{ path('project') }}" class="btn btn-info">Kembali Kedaftar</a>
+    </div>
+    <div class="col-md-6 text-right">
+                    <div class="btn-group">
+                <a href="{{ path('project_edit', { 'id': entity.id }) }}" class="btn btn-warning">Ubah Data</a>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#modalHapus">
+                    Hapus Data
+                </button>
+            </div>
+            </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Anda yakin mau menghapus data ? </h4>
+      </div>
+            <div class="modal-footer text-center">
+        <div class="col-md-6 text-left"><button type="button" class="btn btn-default" data-dismiss="modal">No</button></div>
+        <div class="col-md-6">{{ form(delete_form) }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <hr>
+    <img src="{{ asset(entity.webImagePath) }}" alt="">
+    <div class="panel panel-default">
+        
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ entity.slug }}</td>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <td>{{ entity.title }}</td>
+                </tr>
+                <tr>
+                    <th>Body</th>
+                    <td>{{ entity.body|raw }}</td>
+                </tr>
+                <tr>
+                    <th>Published</th>
+                    <td>{{ entity.published }}</td>
+                </tr>
+                <tr>
+                    <th>Createdat</th>
+                    <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
+                </tr>
+                <tr>
+                    <th>Updatedat</th>
+                    <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <td>{{ entity.image }}</td>
+                </tr>
+                <tr>
+                    <th>File</th>
+                    <td>{{ entity.file }}</td>
+                </tr>
+                <tr>
+                    <th>Category</th>
+                    <td>{{ entity.category }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+{% endblock %}

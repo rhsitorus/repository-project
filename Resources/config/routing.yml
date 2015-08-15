@@ -1,0 +1,4 @@
+rofil_repo_main:
+    resource: "@RofilRepoContentBundle/Controller/"
+    type:     annotation
+    prefix:   /

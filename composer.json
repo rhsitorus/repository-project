@@ -1,0 +1,18 @@
+{
+    "name": "rofil/repo",
+    "type": "symfony-bundle",
+    "description": "Project Repository",
+    "keywords": ["Repository", "bundle", "symfony"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Rofilde Hasudungan Sitorus Pane",
+            "email": "rofilde@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Rofil\\Repo\\ContentBundle": "" }
+    },
+    "target-dir": "Rofil/Repo/ContentBundle"
+}

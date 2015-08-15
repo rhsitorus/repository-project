@@ -1,0 +1,25 @@
+{% extends 'RofilRepoContentBundle:Theme:one-column.html.twig' %}
+
+{% block content -%}
+
+{% if error %}
+	<div class="alert alert-danger">{{ error.message }}</div>
+{% endif %}
+
+
+<form action="{{ path('login_check') }}" method="post">
+	<div class="form-group">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="Masukan username yang valid" />	
+	</div>
+	<div class="form-group">
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="_password" class="form-control" placeholder="Masukan password yang valid" />	
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">Login</button>
+	</div>
+	
+	
+</form>
+{% endblock %}
